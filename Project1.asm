@@ -7,9 +7,36 @@
 ;       SUBROUTINE:		
 ;		MAIN LOOP		
 ;-----------------------------------------
-MLOOP:  ACALL UPDTV; UPDATE VALUE
+MLOOP:  ACALL GINPT; GET INPUT
+		ACALL UPDTV; UPDATE VALUE
+		ACALL OUTPV; OUTPUT VALUE
 		ACALL RSTLP; RESET LOOP VARIABLES
 		JMP MLOOP
+
+;-----------------------------------------
+;       SUBROUTINE:		
+;		Get Input	
+;-----------------------------------------
+;		TODO: Complete subroutine
+GINPT:	RET;
+
+;-----------------------------------------
+;       SUBROUTINE:		
+;		Output current value	
+;-----------------------------------------
+;		TODO: Complete subroutine
+OUTPV:	NOP
+;		If overflow, call make sound
+		JNB OV, SKPOV
+		ACALL MKSND
+SKPOV:	RET
+
+;-----------------------------------------
+;       SUBROUTINE:		
+;		MAKE SOUND	
+;-----------------------------------------
+;		TODO: Complete subroutine
+MKSND: RET
 
 ;-----------------------------------------
 ;       SUBROUTINE:
